@@ -25,9 +25,13 @@ function consolemenu(){
     console.log("# 1. read complete file into Array ");
     console.log("# 2. search string in array ");
     console.log("# 	");
-    console.log("# readFileSync");
-    console.log("# 5. read complete file into Array ");
+    console.log("# Readline");
+    console.log("# 5. read each line ");
     console.log("# 6. search string in array ");
+    console.log("# 	");
+    console.log("# readFileSync");
+    console.log("# 7. read complete file into Array ");
+    console.log("# 68. search string in array ");
     console.log("# 	");
     console.log("# CreateReadstream");
     console.log("# 4. read complete file ");
@@ -61,6 +65,13 @@ function keystrokehandler() {
 
             case "2":
                 parseFileWith_ReadFile();
+                break;
+
+            case "5":
+                readFileWith_readLine();
+                break;
+            case "6":
+                parseFileWith_readLine();
                 break;
 
             default:
@@ -97,6 +108,8 @@ for(var i in array) {
 }
 
 }
+
+function ____File_Handling_with_readFile____() {}
 
 function readFileWith_ReadFile()
 { 
@@ -149,6 +162,63 @@ function parseFileWith_ReadFile()
 	});
 
 
+
+
+}
+
+function ____File_Handling_with_readline____() {}
+
+function readFileWith_readLine()
+{
+    var count = 0;
+
+    TS_ReadStart=new Date().getTime();
+
+
+    var lineReader = require('readline').createInterface({
+        input: require('fs').createReadStream(vcombinepath)
+    });
+
+    lineReader.on('line', function (line) {
+        // console.log('Line from file:', line);
+    });
+
+    lineReader.on('close', function (line) {
+        var TS_End=new Date().getTime();
+        console.log ("[Benchmark] readFileWith_readLine " + (TS_End - TS_ReadStart) + " ms" );
+    });
+
+
+}
+
+function parseFileWith_readLine()
+{
+    var count = 0;
+
+    var searchString = "Profiler::doMeasurement";
+    var parsedArray = [];
+
+    TS_ReadStart=new Date().getTime();
+
+
+    var lineReader = require('readline').createInterface({
+        input: require('fs').createReadStream(vcombinepath)
+    });
+
+    lineReader.on('line', function (line) {
+        // console.log('Line from file:', line);
+        var idx = line.indexOf(searchString);
+        if (idx !== -1) {
+            parsedArray.push(line);
+            //console.log(count + ".line: " + array[i] + '\n');
+        }
+    });
+
+    lineReader.on('close', function (line) {
+        console.log (" parsed Array Length " + parsedArray.length + " Elemente");
+        var TS_End=new Date().getTime();
+        console.log ("[Benchmark] readFileWith_readLine " + (TS_End - TS_ReadStart) + " ms" );
+    });
 
 
 }
