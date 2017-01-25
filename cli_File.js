@@ -11,6 +11,7 @@ var vfilename = "20170124PSC.log";
 //var vcombinepath = "/home/root/Flowmeter/Log/" + vfilename;
 var vcombinepath = "" + vfilename;
 var TS_ReadStart;
+var PSCArray = [];
 
 consolemenu();
 keystrokehandler();
@@ -38,9 +39,13 @@ function consolemenu(){
     console.log("# 8. search string in lines ");
     console.log("# 	");
     console.log("# Backwards Stream");
-    console.log("# 7. CreateReadstream complete file into Array ");
-    console.log("# 8. search string in lines ");
+    console.log("# 9. CreateReadstream complete file into Array ");
+    console.log("# 10. search string in lines ");
     console.log("# 	");    
+    console.log("# Array Handling");
+    console.log("# 11. Show Array ");
+    console.log("# 12. Analyze Array");
+    console.log("# 	");       
     console.log("# 	");
     console.log("###########################################");
 }
@@ -89,6 +94,13 @@ function keystrokehandler() {
                 break;
             case "8":
             	parseFileWith_createReadStream();
+            	break;
+            	
+            case "11":
+            	show_PSCArray();
+            	break;
+            case "12":
+            	convert_PSCArray_To_Object();
             	break;
 
             default:
@@ -148,8 +160,10 @@ function parseFileWith_ReadFile()
         }
         console.log (" Array Length " + array.length + " Elemente");
         console.log (" parsed Array Length " + parsedArray.length + " Elemente");
+
         var TS_End=new Date().getTime();
         console.log ("[Benchmark] parseFileWith_ReadFile " + (TS_End - TS_ReadStart) + " ms" );
+        PSCArray = parsedArray;
 	});
 
 
@@ -332,6 +346,10 @@ function parseFileWith_createReadStream()
 
 function ____File_Handling_Backwards____() {}
 
+
+function ____File_Informations____() {}
+
+
 function getFileInformation()
 {
     console.log ("< Info > [File] touchLogFile");
@@ -475,3 +493,75 @@ function standard_touchLogFile()
 
 }
 
+function ____Handle_Log_Arrays____() {}
+
+function show_PSCArray(){
+	
+	var count = 0;
+    for(i in PSCArray) {
+    	count++;
+    	console.log(count + ".line: " + PSCArray[i]);
+    }
+}
+
+function convert_PSCArray_To_Object(){
+	
+	var jsonPSCObj = new Object();
+	var count = 0;
+	
+    for(i in PSCArray) {
+    	console.log ("## Beginn der Schleife");
+    	console.log("Kontrollstring: " + PSCArray[i]);
+    	strArray = PSCArray[i].split(" ");
+    	
+    	count++;
+    	var starthex = 0;
+    	var hexlength = 0;
+    	
+    	for(i in strArray) {
+    		hexlength++;
+    		var idx = strArray[i].indexOf("0x81");
+            if (idx !== -1) {
+            	starthex = i;
+            	console.log ("array." + i + " | " + strArray[i] + " idx: " + idx + " - TREFFER at " + starthex);
+            }  
+           
+    	}
+        if (starthex!=0 && hexlength > 30) {
+        	
+          var iCounter = parseInt(starthex);
+          console.log (" Verabeitung mit Starthex: " + starthex + " Laenge: " + hexlength);
+          console.log (" Verabeitung mit Wert: " + strArray[starthex]);
+          console.log (" ++++++++++++++++++++++++++");
+          console.log ("w00 :" + strArray[starthex-1] + " | " + strArray[starthex])
+          console.log ("w01 :" + strArray[iCounter + 1] + " | " + strArray[iCounter + 2])
+          console.log ("w02 :" + strArray[iCounter + 3] + " | " + strArray[iCounter + 4] + " || int: " + parseInt(strArray[iCounter + 3]) + "|" + parseInt(strArray[iCounter + 4]) )
+          console.log ("w03 :" + strArray[iCounter + 5] + " | " + strArray[iCounter + 6] + " || int: " + parseInt(strArray[iCounter + 5]) + "|" + parseInt(strArray[iCounter + 6]) )
+          console.log ("w04H :" + strArray[iCounter + 7]+ " || int: " + parseInt(strArray[iCounter + 7]));
+          console.log ("w04L :" + strArray[iCounter + 8]+ " || int: " + parseInt(strArray[iCounter + 8]));
+          console.log ("w05 :" + strArray[iCounter + 9] + " | " + strArray[iCounter + 10] + " || int: " + parseInt(strArray[iCounter + 9]) + "|" + parseInt(strArray[iCounter + 10]) )
+          console.log ("w06 :" + strArray[iCounter + 11] + " | " + strArray[iCounter + 12] + " || int: " + parseInt(strArray[iCounter + 11]) + "|" + parseInt(strArray[iCounter + 12]) )
+          console.log ("w07 :" + strArray[iCounter + 13] + " | " + strArray[iCounter + 14] + " || int: " + parseInt(strArray[iCounter + 13]) + "|" + parseInt(strArray[iCounter + 14]) )
+          console.log ("w08H :" + strArray[iCounter + 15]+ " || int: " + parseInt(strArray[iCounter + 15]));
+          console.log ("w08L :" + strArray[iCounter + 16]+ " || int: " + parseInt(strArray[iCounter + 16]));
+          console.log ("w09 :" + strArray[iCounter + 17] + " | " + strArray[iCounter + 18] + " || int: " + parseInt(strArray[iCounter + 17]) + "|" + parseInt(strArray[iCounter + 18]) )
+          console.log ("w10H :" + strArray[iCounter + 18]+ " || int: " + parseInt(strArray[iCounter + 18]));
+          console.log ("w10L :" + strArray[iCounter + 19]+ " || int: " + parseInt(strArray[iCounter + 19]));
+          console.log ("w11H :" + strArray[iCounter + 20]+ " || int: " + parseInt(strArray[iCounter + 20]));
+          console.log ("w11L :" + strArray[iCounter + 21]+ " || int: " + parseInt(strArray[iCounter + 21]));   
+          console.log ("w12H :" + strArray[iCounter + 22]+ " || int: " + parseInt(strArray[iCounter + 22]));
+          console.log ("w12L :" + strArray[iCounter + 23]+ " || int: " + parseInt(strArray[iCounter + 23]));
+          console.log ("w13 :" + strArray[iCounter + 24] + " | " + strArray[iCounter + 25] + " || int: " + parseInt(strArray[iCounter + 24]) + "|" + parseInt(strArray[iCounter + 25]) )
+          
+          console.log (" ++++++++++++++++++++++++++");
+//          console.log ("w04 w05:" + strArray[iCounter + 3] + " | " + strArray[iCounter + 4])
+//          console.log ("w06 w07:" + strArray[iCounter + 5] + " | " + strArray[iCounter + 6]) 
+//          console.log ("w08 w09:" + strArray[iCounter + 7] + " | " + strArray[iCounter + 8]) 
+//          console.log ("w10 w11:" + strArray[iCounter + 9] + " | " + strArray[iCounter + 10]) 
+//          console.log ("w12 w13:" + strArray[iCounter + 11] + " | " + strArray[iCounter + 12]) 
+ 
+            }
+        console.log ("## Ende der Schleife");
+    }
+	
+}
