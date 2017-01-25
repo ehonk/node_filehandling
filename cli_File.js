@@ -23,21 +23,24 @@ function consolemenu(){
     console.log("# 	");
     console.log("# ReadFile");
     console.log("# 1. read complete file into Array ");
-    console.log("# 2. search string in array ");
+    console.log("# 2. search string in lines ");
     console.log("# 	");
+    console.log("# ReadFileSync");
+    console.log("# 3. readsync complete file into Array ");
+    console.log("# 4. search string in lines ");
+    console.log("# 	");    
     console.log("# Readline");
     console.log("# 5. read each line ");
-    console.log("# 6. search string in array ");
-    console.log("# 	");
-    console.log("# readFileSync");
-    console.log("# 7. read complete file into Array ");
-    console.log("# 68. search string in array ");
+    console.log("# 6. search string in lines ");
     console.log("# 	");
     console.log("# CreateReadstream");
-    console.log("# 4. read complete file ");
-    console.log("# 5. get complete file into array");
-    console.log("# 6. search string in array ");
+    console.log("# 7. CreateReadstream complete file into Array ");
+    console.log("# 8. search string in lines ");
     console.log("# 	");
+    console.log("# Backwards Stream");
+    console.log("# 7. CreateReadstream complete file into Array ");
+    console.log("# 8. search string in lines ");
+    console.log("# 	");    
     console.log("# 	");
     console.log("###########################################");
 }
@@ -66,6 +69,13 @@ function keystrokehandler() {
             case "2":
                 parseFileWith_ReadFile();
                 break;
+            
+            case "3":
+            	readFileWith_ReadFileSync();
+            	break;
+            case "4":
+            	parseFileWith_ReadFileSync();
+            	break;
 
             case "5":
                 readFileWith_readLine();
@@ -73,6 +83,13 @@ function keystrokehandler() {
             case "6":
                 parseFileWith_readLine();
                 break;
+                
+            case "7":
+                readFileWith_createReadStream();
+                break;
+            case "8":
+            	parseFileWith_createReadStream();
+            	break;
 
             default:
                 console.log (" switch default");
@@ -80,32 +97,6 @@ function keystrokehandler() {
 
 
     });
-}
-
-
-function touchLogFilewithArray()
-{ 
-	var objText = new Array();
-var objText2 = new Array();
-var input = __dirname + '/public/data/data.csv';
-var array = fs.readFileSync(input).toString().split("\n");
-
-objText.push(array[0]);
-objText2.push(array[0]);
-
-for(var i in array) {
-    var strArray = array[i];
-    strArray = strArray.substring(0, 19);
-    if (strArray > dtThreeDayAgo && strArray <= dtNow)
-    {
-      //objText += array[i] + "\n";
-      objText.push(array[i]);      
-    }
-    if (strArray > dtThreeDayAgo2 && strArray <= dtNow2)
-    {
-      objText2.push(array[i]);      
-    }      
-}
 
 }
 
@@ -139,7 +130,7 @@ function parseFileWith_ReadFile()
     TS_ReadStart=new Date().getTime();
 
 	var count = 0;
-    var searchString = "Profiler::doMeasurement";
+    var searchString = "0x7e 0x81";
     var parsedArray = [];
 	
 	fs.readFile(vcombinepath, function(err, data) {
@@ -147,7 +138,7 @@ function parseFileWith_ReadFile()
         var array = data.toString().split("\n");
         for(i in array) {
     	    count++;
-	        var idx = array[i].indexOf("Profiler::doMeasurement");
+	        var idx = array[i].indexOf(searchString);
 	        if (idx !== -1) {
                 parsedArray.push(array[i]);
 	    	    //console.log(count + ".line: " + array[i] + '\n');
@@ -163,6 +154,63 @@ function parseFileWith_ReadFile()
 
 
 
+
+}
+
+function ____File_Handling_with_readFileSync____() {}
+
+function readFileWith_ReadFileSync() {
+	
+	var count = 0;
+    TS_ReadStart=new Date().getTime();
+    
+	var objText = new Array();
+	var array = fs.readFileSync(vcombinepath).toString().split("\n");
+
+	objText.push(array[0]);
+
+	for ( var i in array) {
+		count++;
+		//console.log(count + ".line: " + array[i]);
+		objText.push(array[i]);
+
+	}
+	
+    var TS_End=new Date().getTime();
+    console.log ("[Benchmark] readFileWith_ReadFileSync " + (TS_End - TS_ReadStart) + " ms" );
+
+}
+
+function parseFileWith_ReadFileSync() {
+	
+	var count = 0;
+    TS_ReadStart=new Date().getTime();
+    
+	var objText = new Array();
+	var array = fs.readFileSync(vcombinepath).toString().split("\n");
+	
+    var searchString = "0x7e 0x81";
+    var parsedArray = [];
+    
+	objText.push(array[0]);
+
+	for ( var i in array) {
+		count++;
+		//console.log(count + ".line: " + array[i]);
+		objText.push(array[i]);
+		
+        var idx = array[i].indexOf(searchString);
+        if (idx !== -1) {
+            parsedArray.push(array[i]);
+    	    //console.log(count + ".line: " + array[i] + '\n');
+        }
+
+	}
+	
+    console.log (" Array Length " + array.length + " Elemente");
+    console.log (" parsed Array Length " + parsedArray.length + " Elemente");
+    var TS_End=new Date().getTime();
+    console.log ("[Benchmark] parseFileWith_ReadFileSync " + (TS_End - TS_ReadStart) + " ms" );
 
 }
 
@@ -195,7 +243,7 @@ function parseFileWith_readLine()
 {
     var count = 0;
 
-    var searchString = "Profiler::doMeasurement";
+    var searchString = "0x7e 0x81";
     var parsedArray = [];
 
     TS_ReadStart=new Date().getTime();
@@ -223,6 +271,66 @@ function parseFileWith_readLine()
 
 }
 
+function ____File_Handling_with_createReadStream____() {}
+
+function readFileWith_createReadStream()
+{ 
+	var count = 0;
+	var strArray = [];
+	
+    TS_ReadStart=new Date().getTime();
+   
+    var stream = require('stream');
+    var instream = fs.createReadStream(vcombinepath);
+    var rl = readline.createInterface({input: instream, terminal: false});
+
+    rl.on('line', function(line) {
+    	count++;
+//    	strArray = line.split(",");
+    }); // Ende rl.on function
+
+    rl.on('close', function() {
+        console.log (" geparste Lines: " + count + " Lines");
+        var TS_End=new Date().getTime();
+        console.log ("[Benchmark] readFileWith_createReadStream " + (TS_End - TS_ReadStart) + " ms" );
+    });
+
+}
+
+
+function parseFileWith_createReadStream()
+{ 
+	var count = 0;
+	var strArray = [];
+    var searchString = "0x7e 0x81";
+    var parsedArray = [];
+    
+    TS_ReadStart=new Date().getTime();
+   
+    var stream = require('stream');
+    var instream = fs.createReadStream(vcombinepath);
+    var rl = readline.createInterface({input: instream, terminal: false});
+
+    rl.on('line', function(line) {
+    	count++;
+        var idx = line.indexOf(searchString);
+        if (idx !== -1) {
+            parsedArray.push(line);
+//            console.log(count + ".line: " + array[i] + '\n');
+        }    	
+
+    }); // Ende rl.on function
+
+    rl.on('close', function() {
+        console.log (" geparste Lines: " + count + " Lines");
+        console.log (" parsed Array Length " + parsedArray.length + " Elemente");        
+        var TS_End=new Date().getTime();
+        console.log ("[Benchmark] readFileWith_createReadStream " + (TS_End - TS_ReadStart) + " ms" );
+    });
+
+}
+
+function ____File_Handling_Backwards____() {}
 
 function getFileInformation()
 {
