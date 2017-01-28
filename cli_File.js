@@ -41,11 +41,15 @@ function consolemenu(){
     console.log("# Backwards Stream");
     console.log("# 9. CreateReadstream complete file into Array ");
     console.log("# 10. search string in lines ");
-    console.log("# 	");    
+    console.log("# 	");
+    console.log("# Folder Handling");
+    console.log("# 20. search through folder ");
+    console.log("# 21. identify newest log file");
+    console.log("# 	");
+    console.log("# 	");
     console.log("# Array Handling");
     console.log("# 11. Show Array ");
     console.log("# 12. Analyze Array");
-    console.log("# 	");       
     console.log("# 	");
     console.log("###########################################");
 }
@@ -102,6 +106,13 @@ function keystrokehandler() {
             case "12":
             	convert_PSCArray_To_Object();
             	break;
+            case "20":
+                getFolderInformation();
+                break;
+            case "21":
+                //getLatestFile();
+                console.log (" switch getLatestFile: " + getLatestFile() );
+                break;
 
             default:
                 console.log (" switch default");
@@ -374,6 +385,68 @@ function getFileInformation()
 
 }
 
+
+function ____Folder_Informations____() {}
+
+
+function getFolderInformation(){
+
+    console.log ("< Info > [AJAX] AjaxGetMonthlyDataFiles: ");
+
+    //var vcombinepath = "/home/root/Flowmeter/Log/" + vfilename;
+
+    var folderpath = "/home/pi/coding_node/node_filehandling";
+
+    var filenames;
+    filenames = fs.readdirSync( folderpath );
+
+    var filelist = new Object();
+
+
+    for(var i in filenames) {
+
+        var fileobj = new Object();
+        var filena = filenames[i];
+
+        var stats = fs.statSync(folderpath + "/" + filenames[i]);
+        var fileSizeInBytes = stats["size"]
+        var fileSizeInMegabytes = fileSizeInBytes / 1000000.0
+
+        fileobj.filename =  filenames[i];
+        fileobj.fileSizeInMegabytes =  fileSizeInMegabytes;
+        fileobj.atime = stats["atime"];
+        fileobj.ctime = stats["ctime"];
+        fileobj.mtime = stats["mtime"];
+
+        filelist[filena] = fileobj
+        console.log("Filename Name: " + filenames[i] + "  | size: " + fileSizeInMegabytes + " | modify: " + stats["mtime"] );
+    }
+
+
+}
+
+function getLatestFile(){
+
+    var folderpath = "/home/pi/coding_node/node_filehandling/";
+
+    var files = fs.readdirSync(folderpath);
+
+     var out = [];
+        files.forEach(function(file) {
+            var stats = fs.statSync(folderpath + "/" +file);
+            if( stats.isFile()  ) {
+                if (!file.indexOf("201")) {
+                out.push({"file":file, "mtime": stats.mtime.getTime()});
+                }
+            }
+        });
+        out.sort(function(a,b) {
+            return b.mtime - a.mtime;
+        })
+        return (out.length>0) ? out[0].file : "";
+
+}
+
 function touchLogFile()
 {
 	console.log ("< Info > [File] touchLogFile");
@@ -528,39 +601,59 @@ function convert_PSCArray_To_Object(){
            
     	}
         if (starthex!=0 && hexlength > 30) {
-        	
+
+          var OnePSCObj = new Object();
           var iCounter = parseInt(starthex);
           console.log (" Verabeitung mit Starthex: " + starthex + " Laenge: " + hexlength);
           console.log (" Verabeitung mit Wert: " + strArray[starthex]);
           console.log (" ++++++++++++++++++++++++++");
-          console.log ("w00 :" + strArray[starthex-1] + " | " + strArray[starthex])
-          console.log ("w01 :" + strArray[iCounter + 1] + " | " + strArray[iCounter + 2])
-          console.log ("w02 :" + strArray[iCounter + 3] + " | " + strArray[iCounter + 4] + " || int: " + parseInt(strArray[iCounter + 3]) + "|" + parseInt(strArray[iCounter + 4]) )
-          console.log ("w03 :" + strArray[iCounter + 5] + " | " + strArray[iCounter + 6] + " || int: " + parseInt(strArray[iCounter + 5]) + "|" + parseInt(strArray[iCounter + 6]) )
-          console.log ("w04H :" + strArray[iCounter + 7]+ " || int: " + parseInt(strArray[iCounter + 7]));
-          console.log ("w04L :" + strArray[iCounter + 8]+ " || int: " + parseInt(strArray[iCounter + 8]));
-          console.log ("w05 :" + strArray[iCounter + 9] + " | " + strArray[iCounter + 10] + " || int: " + parseInt(strArray[iCounter + 9]) + "|" + parseInt(strArray[iCounter + 10]) )
-          console.log ("w06 :" + strArray[iCounter + 11] + " | " + strArray[iCounter + 12] + " || int: " + parseInt(strArray[iCounter + 11]) + "|" + parseInt(strArray[iCounter + 12]) )
-          console.log ("w07 :" + strArray[iCounter + 13] + " | " + strArray[iCounter + 14] + " || int: " + parseInt(strArray[iCounter + 13]) + "|" + parseInt(strArray[iCounter + 14]) )
+          console.log ("ts  :" + strArray[0] );
+          console.log ("w00 :" + strArray[iCounter] + " | " + strArray[iCounter-1]);
+          console.log ("w01 :" + strArray[iCounter + 2] + " | " + strArray[iCounter + 1]);
+          console.log ("w02 :" + strArray[iCounter + 4] + " | " + strArray[iCounter + 3] + " || int: " + (parseInt(strArray[iCounter + 4]) * 256 + parseInt(strArray[iCounter + 3]) ) );
+          console.log ("w03 :" + strArray[iCounter + 6] + " | " + strArray[iCounter + 5] + " || int: " + (parseInt(strArray[iCounter + 6]) * 256 + parseInt(strArray[iCounter + 5]) ) );
+          console.log ("w04H :" + strArray[iCounter + 7]+ " || int: " + parseInt(strArray[iCounter + 7]) );
+          console.log ("w04L :" + strArray[iCounter + 8]+ " || int: " + parseInt(strArray[iCounter + 8])  );
+          console.log ("w05 :" + strArray[iCounter + 10] + " | " + strArray[iCounter + 9] + " || int: " + (parseInt(strArray[iCounter + 10]) * 256 + parseInt(strArray[iCounter + 9]) ) );
+          console.log ("w06 :" + strArray[iCounter + 12] + " | " + strArray[iCounter + 11] + " || int: " + (parseInt(strArray[iCounter + 12]) * 256 + parseInt(strArray[iCounter + 11]) ) );
+          console.log ("w07 :" + strArray[iCounter + 14] + " | " + strArray[iCounter + 13] + " || int: " + (parseInt(strArray[iCounter + 14]) * 256 + parseInt(strArray[iCounter + 13]) ) );
           console.log ("w08H :" + strArray[iCounter + 15]+ " || int: " + parseInt(strArray[iCounter + 15]));
           console.log ("w08L :" + strArray[iCounter + 16]+ " || int: " + parseInt(strArray[iCounter + 16]));
-          console.log ("w09 :" + strArray[iCounter + 17] + " | " + strArray[iCounter + 18] + " || int: " + parseInt(strArray[iCounter + 17]) + "|" + parseInt(strArray[iCounter + 18]) )
+          console.log ("w09 :" + strArray[iCounter + 18] + " | " + strArray[iCounter + 17] + " || int: " + (parseInt(strArray[iCounter + 18]) * 256 + parseInt(strArray[iCounter + 17]) ) );
           console.log ("w10H :" + strArray[iCounter + 18]+ " || int: " + parseInt(strArray[iCounter + 18]));
           console.log ("w10L :" + strArray[iCounter + 19]+ " || int: " + parseInt(strArray[iCounter + 19]));
           console.log ("w11H :" + strArray[iCounter + 20]+ " || int: " + parseInt(strArray[iCounter + 20]));
           console.log ("w11L :" + strArray[iCounter + 21]+ " || int: " + parseInt(strArray[iCounter + 21]));   
           console.log ("w12H :" + strArray[iCounter + 22]+ " || int: " + parseInt(strArray[iCounter + 22]));
           console.log ("w12L :" + strArray[iCounter + 23]+ " || int: " + parseInt(strArray[iCounter + 23]));
-          console.log ("w13 :" + strArray[iCounter + 24] + " | " + strArray[iCounter + 25] + " || int: " + parseInt(strArray[iCounter + 24]) + "|" + parseInt(strArray[iCounter + 25]) )
-          
+          console.log ("w13 :" + strArray[iCounter + 25] + " | " + strArray[iCounter + 24] + " || int: " + (parseInt(strArray[iCounter + 25]) * 256 + parseInt(strArray[iCounter + 24]) ) );
+
+
           console.log (" ++++++++++++++++++++++++++");
-//          console.log ("w04 w05:" + strArray[iCounter + 3] + " | " + strArray[iCounter + 4])
-//          console.log ("w06 w07:" + strArray[iCounter + 5] + " | " + strArray[iCounter + 6]) 
-//          console.log ("w08 w09:" + strArray[iCounter + 7] + " | " + strArray[iCounter + 8]) 
-//          console.log ("w10 w11:" + strArray[iCounter + 9] + " | " + strArray[iCounter + 10]) 
-//          console.log ("w12 w13:" + strArray[iCounter + 11] + " | " + strArray[iCounter + 12]) 
- 
-            }
+
+          OnePSCObj.Timestamp = strArray[0];
+          OnePSCObj.w0 = strArray[iCounter] + " " + strArray[iCounter-1]  ;
+          OnePSCObj.w1 = strArray[iCounter + 2] + " " + strArray[iCounter + 1];
+          OnePSCObj.w2  = + (parseInt(strArray[iCounter + 4]) * 256 + parseInt(strArray[iCounter + 3]) ) ;
+          OnePSCObj.w3  = + (parseInt(strArray[iCounter + 6]) * 256 + parseInt(strArray[iCounter + 5]) ) ;
+          OnePSCObj.w4h = parseInt(strArray[iCounter + 7]);
+          OnePSCObj.w4l = parseInt(strArray[iCounter + 8]);
+          OnePSCObj.w5 =  (parseInt(strArray[iCounter + 10]) * 256 + parseInt(strArray[iCounter + 9]) );
+          OnePSCObj.w6 =(parseInt(strArray[iCounter + 12]) * 256 + parseInt(strArray[iCounter + 11]) );
+          OnePSCObj.w7 = (parseInt(strArray[iCounter + 14]) * 256 + parseInt(strArray[iCounter + 13]) );
+          OnePSCObj.w8h = parseInt(strArray[iCounter + 15]);
+          OnePSCObj.w8l = parseInt(strArray[iCounter + 16]);
+          OnePSCObj.w9 = (parseInt(strArray[iCounter + 18]) * 256 + parseInt(strArray[iCounter + 17]) );
+          OnePSCObj.w10h = parseInt(strArray[iCounter + 18]);
+          OnePSCObj.w10l = parseInt(strArray[iCounter + 19]);
+          OnePSCObj.w11h = parseInt(strArray[iCounter + 20]);
+          OnePSCObj.w11l = parseInt(strArray[iCounter + 21]);
+          OnePSCObj.w12h = parseInt(strArray[iCounter + 22]);
+          OnePSCObj.w12l = parseInt(strArray[iCounter + 23]);
+          OnePSCObj.w13 = (parseInt(strArray[iCounter + 25]) * 256 + parseInt(strArray[iCounter + 24]) );
+
+            jsonPSCObj.push(OnePSCObj);
+        }
         console.log ("## Ende der Schleife");
     }
 	
