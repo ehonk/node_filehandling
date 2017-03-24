@@ -1,0 +1,1468 @@
+{
+    "Communication": {
+        "FTP": {
+            "Server": "87.106.68.228",
+            "Port": 21,
+            "User": "hvtest",
+            "Password": "sB8PW1tNtabX",
+            "Active": "1",
+            "PushInterval_sec": 600,
+            "ExportInterval_sec": 120,
+            "RemoteDir": "/fielddata",
+            "SysID": "HVMT0487",
+            "UsePassive": 0,
+            "Register1": {
+                "Value": "Q",
+                "Units": "m³/s"
+            },
+            "Register2": {
+                "Value": "H",
+                "Units": "m"
+            },
+            "Register3": {
+                "Value": "vm",
+                "Units": "m/s"
+            },
+            "Register4": {
+                "Value": "Signal",
+                "Units": "dB"
+            },
+            "Register5": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register6": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register7": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register8": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register9": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register10": {
+                "Value": "",
+                "Units": ""
+            },
+            "Type": 1,
+            "Backup_min": 300,
+            "FileSuffix": ""
+        },
+        "GSM": {
+            "APN": "internet.t-mobile.de",
+            "User": "t-mobile",
+            "Password": "tm",
+            "Number": "*99#"
+        },
+        "LAN": {
+            "IP": "10.10.42.231",
+            "Subnet": "255.255.255.0",
+            "Gateway": "10.10.42.17",
+            "DHCP": "1"
+        },
+        "Modbus": {
+            "Active": 1,
+            "Port": 502,
+            "Type": "RTU",
+            "ID": 42,
+            "Baudrate": 9600,
+            "Register1": {
+                "Value": "Q",
+                "Units": "m³/h",
+                "Datatype": "Float",
+                "Delay_s": 0
+            },
+            "Register2": {
+                "Value": "STATUS",
+                "Units": "",
+                "Datatype": "Integer",
+                "Delay_s": 0
+            },
+            "Register3": {
+                "Value": "H",
+                "Units": "m",
+                "Datatype": "Float",
+                "Delay_s": 0
+            },
+            "Register4": {
+                "Value": "vm",
+                "Units": "m/s",
+                "Datatype": "Float",
+                "Delay_s": 0
+            },
+            "Register5": {
+                "Value": "A",
+                "Units": "m²",
+                "Datatype": "Float",
+                "Delay_s": 0
+            }
+        },
+        "WLAN": {
+            "DHCP": "0",
+            "Gateway": "",
+            "IP": "192.168.0.1",
+            "Subnet": "255.255.255.0"
+        },
+        "Serial": {
+            "Active": 0,
+            "SystemKey": "",
+            "DeviceNumer": "",
+            "Baudrate": 9600,
+            "SendFrequency": 1,
+            "AutoSend": 0,
+            "ProtocolType": 1,
+            "Register1": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register2": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register3": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register4": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register5": {
+                "Value": "",
+                "Units": ""
+            },
+            "Register6": {
+                "Value": "",
+                "Units": ""
+            }
+        },
+        "SMS": {
+            "Center": ""
+        }
+    },
+    "CrossSection": {
+        "Egg": {
+            "Active": 0,
+            "Radius": 0.11,
+            "SludgeLevel": 0.01,
+            "SensorArea": 0
+        },
+        "JTrapezoid": {
+            "Active": 0,
+            "Height_lower": 0,
+            "Height_upper": 0,
+            "SludgeLevel": 0,
+            "Width_lower": 0,
+            "Width_upper": 0
+        },
+        "Mouth": {
+            "Active": 0,
+            "Radius": 0.22,
+            "SludgeLevel": 0.01,
+            "SensorArea": 0
+        },
+        "Pipe": {
+            "Active": 0,
+            "Diameter": 0.21,
+            "SludgeLevel": 0,
+            "SensorArea": 0
+        },
+        "Polygon": {
+            "Active": 0,
+            "PointCount": 13,
+            "Polygon_Point1": {
+                "x_m": 1.5,
+                "y_m": 1.95
+            },
+            "Polygon_Point10": {
+                "x_m": 8.700000000000001,
+                "y_m": 0.6
+            },
+            "Polygon_Point11": {
+                "x_m": 9.200000000000001,
+                "y_m": 0.9
+            },
+            "Polygon_Point12": {
+                "x_m": 10.1,
+                "y_m": 1.15
+            },
+            "Polygon_Point13": {
+                "x_m": 10.1,
+                "y_m": 1.95
+            },
+            "Polygon_Point2": {
+                "x_m": 1.5,
+                "y_m": 1.55
+            },
+            "Polygon_Point3": {
+                "x_m": 2,
+                "y_m": 0.75
+            },
+            "Polygon_Point4": {
+                "x_m": 3,
+                "y_m": 0.35
+            },
+            "Polygon_Point5": {
+                "x_m": 4,
+                "y_m": 0.25
+            },
+            "Polygon_Point6": {
+                "x_m": 5,
+                "y_m": 0.21
+            },
+            "Polygon_Point7": {
+                "x_m": 6,
+                "y_m": 0
+            },
+            "Polygon_Point8": {
+                "x_m": 7,
+                "y_m": 0.5
+            },
+            "Polygon_Point9": {
+                "x_m": 7.8,
+                "y_m": 0.28
+            },
+            "SensorArea": 0
+        },
+        "Rectangle": {
+            "Active": 1,
+            "Height": 0.2,
+            "SludgeLevel": 0,
+            "Width": 0.15,
+            "SensorArea": 0
+        },
+        "Trapezoid": {
+            "Active": 0,
+            "Angle_left": 44,
+            "Angle_right": 55,
+            "Height": 0.05,
+            "SludgeLevel": null,
+            "Width": 0.2,
+            "SensorArea": 0
+        },
+        "UProfile": {
+            "Active": 0,
+            "Height": 0.19,
+            "Radius": 0.12,
+            "SludgeLevel": 0
+        }
+    },
+    "DRC": {
+        "Set1": {
+            "Active": 0,
+            "Type": "Polynomial",
+            "c0": 0.00028,
+            "c1": 0,
+            "c2": 0,
+            "c3": 0,
+            "c4": 0,
+            "c5": 0,
+            "c6": 0
+        },
+        "Set2": {
+            "Active": 0,
+            "MaxW": 0.01,
+            "MinW": 10.005,
+            "Roughness": 0.001,
+            "Slope": 0.001,
+            "Type": "Manning",
+            "isStrickler": 0
+        },
+        "Set3": {
+            "Active": 0,
+            "PolynomialDegree": 4,
+            "QMax": 0.01388888888888889,
+            "QMin": 0,
+            "Type": "Table",
+            "WMax": 0.21,
+            "WMin": 0,
+            "WQSet1": {
+                "Active": 1,
+                "Q": 0.001388888888888889,
+                "TimeStamp": "2014-07-01",
+                "W": 0.05
+            },
+            "WQSet2": {
+                "Active": 1,
+                "Q": 0.001944444444444444,
+                "TimeStamp": "2014-07-02",
+                "W": 0.08
+            },
+            "WQSet3": {
+                "Active": 1,
+                "Q": 0.002083333333333333,
+                "TimeStamp": "2014-07-03",
+                "W": 0.09
+            },
+            "WQSet4": {
+                "Active": 1,
+                "Q": 0.004166666666666667,
+                "TimeStamp": "2014-07-02",
+                "W": 0.12
+            },
+            "WQSet5": {
+                "Active": 1,
+                "Q": 0.006111111111111111,
+                "TimeStamp": "2014-07-01",
+                "W": 0.16
+            },
+            "WQSet6": {
+                "Active": 1,
+                "Q": 0.008888888888888889,
+                "TimeStamp": "2014-07-01",
+                "W": 0.2
+            }
+        },
+        "WlowerLayer1": 0,
+        "onSensorFailure": 0,
+        "useQCalibration": 0
+    },
+    "DSPComm": {},
+    "DSPParameter1": {
+        "AGC1": {
+            "AGCDelayCounter": 10,
+            "GainMax": 20,
+            "GainMin": 1,
+            "MaxCorrectionCount": 7
+        },
+        "AGC2": {
+            "AGCDelayCounter": 10,
+            "GainMax": 20,
+            "GainMin": 1,
+            "MaxCorrectionCount": 7
+        },
+        "DSPSender1": {
+            "ActiveDamping": 20,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "DSPSender2": {
+            "ActiveDamping": 20,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "ReferencePattern": {
+            "MatchingPattern": 1,
+            "NominalFrequency_kHz": 1000,
+            "NotchDelay": 3,
+            "NotchWidth_perc": 3,
+            "NumberOfPulses": 2,
+            "QuietTime": 10,
+            "RiseTime": 12,
+            "StartPolarity": 1
+        },
+        "SignalProcessing": {
+            "DelayCalibration": 0,
+            "IgnoreTimeSlice": 0,
+            "MaxNoise_perc": 15,
+            "MinCorrelation": 80,
+            "MinNoise_perc": 10,
+            "NoiseFactor": 5,
+            "SampleFreq_MHz": 10,
+            "SamplingDelay": 137,
+            "SamplingTime": 2640,
+            "UseCrossCorrelation": 1,
+            "ZeroCrossMaxFreq_kHz": 1250,
+            "ZeroCrossMinFreq_kHz": 750,
+            "vPath1": null,
+            "vPath2": null,
+            "waitComm": 1000,
+            "MeasurementFilter": 0
+        }
+    },
+    "DSPParameter2": {
+        "AGC1": {
+            "AGCDelayCounter": 10,
+            "GainMax": 20,
+            "GainMin": 1,
+            "MaxCorrectionCount": 7
+        },
+        "AGC2": {
+            "AGCDelayCounter": 10,
+            "GainMax": 20,
+            "GainMin": 1,
+            "MaxCorrectionCount": 7
+        },
+        "DSPSender1": {
+            "ActiveDamping": 20,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 25
+        },
+        "DSPSender2": {
+            "ActiveDamping": 20,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "ReferencePattern": {
+            "MatchingPattern": 1,
+            "NominalFrequency_kHz": 1000,
+            "NotchDelay": 3,
+            "NotchWidth_perc": 3,
+            "NumberOfPulses": 2,
+            "QuietTime": 10,
+            "RiseTime": 12,
+            "StartPolarity": 1
+        },
+        "SignalProcessing": {
+            "DelayCalibration": 0,
+            "IgnoreTimeSlice": 0,
+            "MaxNoise_perc": 15,
+            "MinCorrelation": 80,
+            "MinNoise_perc": 5,
+            "NoiseFactor": 5,
+            "SampleFreq_MHz": 10,
+            "SamplingDelay": 80,
+            "SamplingTime": 200,
+            "UseCrossCorrelation": 1,
+            "ZeroCrossMaxFreq_kHz": 1250,
+            "ZeroCrossMinFreq_kHz": 750,
+            "vPath1": null,
+            "vPath2": null,
+            "waitComm": 0,
+            "MeasurementFilter": 0
+        }
+    },
+    "DSPParameter3": {
+        "AGC1": {
+            "AGCDelayCounter": null,
+            "GainMax": null,
+            "GainMin": null,
+            "MaxCorrectionCount": null
+        },
+        "AGC2": {
+            "AGCDelayCounter": 10,
+            "GainMax": 13,
+            "GainMin": 3,
+            "MaxCorrectionCount": 7
+        },
+        "DSPSender1": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 25
+        },
+        "DSPSender2": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": 2000,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "ReferencePattern": {
+            "MatchingPattern": 1,
+            "NominalFrequency_kHz": 188,
+            "NotchDelay": 3,
+            "NotchWidth_perc": 3,
+            "NumberOfPulses": 2,
+            "QuietTime": null,
+            "RiseTime": 12,
+            "StartPolarity": 1
+        },
+        "SignalProcessing": {
+            "DelayCalibration": 2000,
+            "IgnoreTimeSlice": 0,
+            "MaxNoise_perc": 15,
+            "MinCorrelation": 80,
+            "MinNoise_perc": 5,
+            "NoiseFactor": 5,
+            "SampleFreq_MHz": 10,
+            "SamplingDelay": 80,
+            "SamplingTime": 200,
+            "UseCrossCorrelation": 1,
+            "ZeroCrossMaxFreq_kHz": 1250,
+            "ZeroCrossMinFreq_kHz": 750,
+            "vPath1": null,
+            "vPath2": null,
+            "waitComm": 0,
+            "MeasurementFilter": 0
+        }
+    },
+    "DSPParameter4": {
+        "AGC1": {
+            "AGCDelayCounter": null,
+            "GainMax": null,
+            "GainMin": null,
+            "MaxCorrectionCount": null
+        },
+        "AGC2": {
+            "AGCDelayCounter": 10,
+            "GainMax": 15,
+            "GainMin": 4,
+            "MaxCorrectionCount": 7
+        },
+        "DSPSender1": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": null,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "DSPSender2": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": null,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "ReferencePattern": {
+            "MatchingPattern": 1,
+            "NominalFrequency_kHz": 188,
+            "NotchDelay": 3,
+            "NotchWidth_perc": 3,
+            "NumberOfPulses": 2,
+            "QuietTime": null,
+            "RiseTime": 12,
+            "StartPolarity": 1
+        },
+        "SignalProcessing": {
+            "DelayCalibration": 2000,
+            "IgnoreTimeSlice": 0,
+            "MaxNoise_perc": 10,
+            "MinCorrelation": 80,
+            "MinNoise_perc": 15,
+            "NoiseFactor": 5,
+            "SampleFreq_MHz": 10,
+            "SamplingDelay": 137,
+            "SamplingTime": 2640,
+            "UseCrossCorrelation": 1,
+            "ZeroCrossMaxFreq_kHz": null,
+            "ZeroCrossMinFreq_kHz": null,
+            "vPath1": null,
+            "vPath2": null,
+            "waitComm": 1000,
+            "MeasurementFilter": 0
+        }
+    },
+    "DSPParameter5": {
+        "AGC1": {
+            "AGCDelayCounter": 10,
+            "GainMax": 15,
+            "GainMin": 3,
+            "MaxCorrectionCount": 4
+        },
+        "AGC2": {
+            "AGCDelayCounter": 10,
+            "GainMax": 12,
+            "GainMin": 2,
+            "MaxCorrectionCount": 7
+        },
+        "DSPSender1": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": null,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "DSPSender2": {
+            "ActiveDamping": 101,
+            "NoOfPulses": 5,
+            "SendFrequency": null,
+            "SendNotchDelay": 2,
+            "SendNotchWidth": 3,
+            "SendVoltage": 45
+        },
+        "ReferencePattern": {
+            "MatchingPattern": 1,
+            "NominalFrequency_kHz": 188,
+            "NotchDelay": 3,
+            "NotchWidth_perc": 3,
+            "NumberOfPulses": 2,
+            "QuietTime": null,
+            "RiseTime": 12,
+            "StartPolarity": 1
+        },
+        "SignalProcessing": {
+            "DelayCalibration": 2000,
+            "IgnoreTimeSlice": 0,
+            "MaxNoise_perc": 10,
+            "MinCorrelation": 80,
+            "MinNoise_perc": 15,
+            "NoiseFactor": 5,
+            "SampleFreq_MHz": 10,
+            "SamplingDelay": 137,
+            "SamplingTime": 2640,
+            "UseCrossCorrelation": 1,
+            "ZeroCrossMaxFreq_kHz": null,
+            "ZeroCrossMinFreq_kHz": null,
+            "vPath1": null,
+            "vPath2": null,
+            "waitComm": 1000
+        }
+    },
+    "DischargeCalculation": {
+        "Active": 0,
+        "QMax": 0.013888888888888888,
+        "QMin": 0,
+        "PolynomialDegree": 4,
+        "MethodIso6416": {},
+        "QCalibration": {
+            "QCSet1": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.0005555555555555556,
+                "Qmeas": 0.0002777777777777778
+            },
+            "QCSet2": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.0016666666666666666,
+                "Qmeas": 0.001388888888888889
+            },
+            "QCSet3": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.002777777777777778,
+                "Qmeas": 0.0022222222222222222
+            },
+            "QCSet4": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.006111111111111111,
+                "Qmeas": 0.005555555555555556
+            },
+            "QCSet5": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.009166666666666667,
+                "Qmeas": 0.008333333333333333
+            }
+        },
+        "LowCutVMax": null,
+        "LowCutVMin": null,
+        "UseQ4LC": 1
+    },
+    "DischargeCalculation1": {
+        "Active": 0,
+        "QMax": 0.013888888888888888,
+        "QMin": 0,
+        "PolynomialDegree": 4,
+        "MethodIso6416": {},
+        "QCalibration": {
+            "QCSet1": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.0005555555555555556,
+                "Qmeas": 0.0002777777777777778
+            },
+            "QCSet2": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.0016666666666666666,
+                "Qmeas": 0.001388888888888889
+            },
+            "QCSet3": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.002777777777777778,
+                "Qmeas": 0.0022222222222222222
+            },
+            "QCSet4": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.006111111111111111,
+                "Qmeas": 0.005555555555555556
+            },
+            "QCSet5": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.009166666666666667,
+                "Qmeas": 0.008333333333333333
+            }
+        },
+        "LowCutVMax": null,
+        "LowCutVMin": null,
+        "UseQ4LC": 1
+    },
+    "DischargeCalculation2": {
+        "Active": 0,
+        "QMax": 0.013888888888888888,
+        "QMin": 0,
+        "PolynomialDegree": 4,
+        "MethodIso6416": {},
+        "QCalibration": {
+            "QCSet1": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.1,
+                "Qmeas": 0.2
+            },
+            "QCSet2": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.0016666666666666666,
+                "Qmeas": 0.001388888888888889
+            },
+            "QCSet3": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.5,
+                "Qmeas": 0.8
+            },
+            "QCSet4": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.006111111111111111,
+                "Qmeas": 0.005555555555555556
+            },
+            "QCSet5": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.9,
+                "Qmeas": 0.5
+            }
+        },
+        "LowCutVMax": null,
+        "LowCutVMin": null,
+        "UseQ4LC": 1
+    },
+    "DischargeCalculation3": {
+        "Active": 0,
+        "QMax": 0.013888888888888888,
+        "QMin": 0,
+        "PolynomialDegree": 4,
+        "MethodIso6416": {},
+        "QCalibration": {
+            "QCSet1": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 0.1,
+                "Qmeas": 0.2
+            },
+            "QCSet2": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 2,
+                "Qmeas": 3
+            },
+            "QCSet3": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 5,
+                "Qmeas": 6
+            },
+            "QCSet4": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 8,
+                "Qmeas": 9
+            },
+            "QCSet5": {
+                "Active": 1,
+                "TimeStamp": "",
+                "W": 0,
+                "Qref": 11,
+                "Qmeas": 13
+            }
+        },
+        "LowCutVMax": null,
+        "LowCutVMin": null,
+        "UseQ4LC": 1
+    },
+    "Download": {
+        "DataFormat": "European",
+        "DateTime": "YYYY.MM.DD HH:mm:ss",
+        "Decimal": ".",
+        "DecimalSeparator": ",",
+        "FileType": "txt",
+        "Separator": ";",
+        "ThousandSeparator": "."
+    },
+    "Geometry": {
+        "LayerCount": null,
+        "Path1": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path10": {
+            "Active": null,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path2": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path3": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path4": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path5": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path6": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path7": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path8": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "Path9": {
+            "Active": 0,
+            "Angle_deg": null,
+            "Distance_m": null,
+            "Hysteris_m": null,
+            "Layer": null,
+            "Length_m": null,
+            "Threshold_m": null,
+            "R_IDX": -1
+        },
+        "PathCount": null,
+        "Hybrid": 0,
+        "used4Proj": 0
+    },
+    "IOBoard": {
+        "AIValues": [
+            "HWater",
+            "HAir"
+        ],
+        "AOValues": [
+            "Q",
+            "vm"
+        ],
+        "A_In1": {
+            "Value": "HWater",
+            "Units": "m",
+            "Max_in": 10,
+            "Min_in": 0,
+            "Max_out": 20,
+            "Min_out": 4,
+            "Offset": 0,
+            "Downlooking": 0
+        },
+        "A_In2": {
+            "Value": "None",
+            "Units": null,
+            "Max_in": 0,
+            "Min_in": 0,
+            "Max_out": 20,
+            "Min_out": 4,
+            "Offset": 0,
+            "Downlooking": 0
+        },
+        "A_In3": {
+            "Value": "None",
+            "Units": null,
+            "Max_in": 0,
+            "Min_in": 0,
+            "Max_out": 20,
+            "Min_out": 4,
+            "Offset": 0,
+            "Downlooking": 0
+        },
+        "A_In4": {
+            "Value": "None",
+            "Units": null,
+            "Max_in": 0,
+            "Min_in": 0,
+            "Max_out": 20,
+            "Min_out": 4,
+            "Offset": 0,
+            "Downlooking": 0
+        },
+        "A_Out1": {
+            "Max_in": 50,
+            "Max_out": 20,
+            "Min_in": 0,
+            "Min_out": 4,
+            "Units": "m³/h",
+            "Value": "Q",
+            "Behaviour": 0
+        },
+        "A_Out2": {
+            "Max_in": 1,
+            "Max_out": 20,
+            "Min_in": 0,
+            "Min_out": 4,
+            "Units": "m/s",
+            "Value": "vm",
+            "Behaviour": 0
+        },
+        "A_Out3": {
+            "Max_in": 50,
+            "Max_out": 20,
+            "Min_in": 0,
+            "Min_out": 4,
+            "Units": "m³/h",
+            "Value": "Q",
+            "Behaviour": 0
+        },
+        "A_Out4": {
+            "Max_in": 1,
+            "Max_out": 20,
+            "Min_in": 0,
+            "Min_out": 4,
+            "Units": "m/s",
+            "Value": "vm",
+            "Behaviour": 0
+        },
+        "CommPort": "/dev/ttyO2",
+        "DOValues": [
+            "STATUS",
+            "Alarm",
+            "Pulse"
+        ],
+        "D_Out1": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 50,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": 2,
+            "Limittype": "Overstep",
+            "Hysteresis": 0.01,
+            "RangeMin": null,
+            "RangeMax": 2,
+            "RangeValue": "H",
+            "Inverted": 0
+        },
+        "D_Out2": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 200,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": 4,
+            "Limittype": "Below",
+            "Hysteresis": 0.5,
+            "RangeMin": 4,
+            "RangeMax": null,
+            "RangeValue": "HAir",
+            "Inverted": 0
+        },
+        "D_Out3": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 100,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": null,
+            "Limittype": null,
+            "Hysteresis": 0.5,
+            "RangeMin": null,
+            "RangeMax": null,
+            "RangeValue": "H",
+            "Inverted": 0
+        },
+        "D_Out4": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 84,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": null,
+            "Limittype": null,
+            "Hysteresis": 100,
+            "RangeMin": null,
+            "RangeMax": null,
+            "RangeValue": "Q",
+            "Inverted": 0
+        },
+        "D_Out5": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 84,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": null,
+            "Limittype": null,
+            "Hysteresis": 100,
+            "RangeMin": null,
+            "RangeMax": null,
+            "RangeValue": "Q",
+            "Inverted": 0
+        },
+        "D_Out6": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 84,
+            "Width_ms": 500,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": null,
+            "Limittype": null,
+            "Hysteresis": 1,
+            "RangeMin": null,
+            "RangeMax": null,
+            "RangeValue": "Q",
+            "Inverted": 0
+        },
+        "User_Values": {},
+        "D_In1": {
+            "Value": "",
+            "Delay_s": 0
+        },
+        "D_In2": {
+            "Value": "",
+            "Delay_s": 0
+        },
+        "D_Out7": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 50,
+            "Width_ms": 1000,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": 10,
+            "Limittype": "Below",
+            "Hysteresis": 1,
+            "RangeMin": 10,
+            "RangeMax": null,
+            "RangeValue": "Q",
+            "Inverted": 0
+        },
+        "D_Out8": {
+            "Value": "None",
+            "Units": "",
+            "Sum": 50,
+            "Width_ms": 1000,
+            "Mask": 1,
+            "Delay_s": null,
+            "Limit": 10,
+            "Limittype": "Below",
+            "Hysteresis": 1,
+            "RangeMin": 10,
+            "RangeMax": null,
+            "RangeValue": "Q",
+            "Inverted": 0
+        }
+    },
+    "LCDisplay": {
+        "ScrollIntervall": 10,
+        "Page1": {
+            "Line1": "TimeStamp",
+            "Line2": "Q",
+            "Line3": "H",
+            "Line4": "vm"
+        },
+        "Page2": {
+            "Line1": "TimeStamp",
+            "Line2": "DVol",
+            "Line3": "HWater",
+            "Line4": "Signal"
+        },
+        "Page3": {
+            "Line1": "TimeStamp",
+            "Line2": "SysName",
+            "Line3": "Wlan",
+            "Line4": "Ether"
+        }
+    },
+    "Logging": {
+        "LogFilesHistory_days": 90,
+        "AveragingTimeSpan_sec": 120,
+        "DatabaseHistory_days": 90,
+        "DatabaseWriteInterval_sec": 120,
+        "TraceLevel": 0,
+        "ScreenRefreshInterval_sec": 30,
+        "NoOfLastLine": 80,
+        "AveragingMethod": "Median",
+        "DiagttActive": 0,
+        "TofInitInterval_sec": 1200,
+        "PowerSavingOnTime_sec": 0,
+        "PowerSavingOffTime_sec": 0,
+        "PowerSavingCycleTime_min": 15,
+        "PowerSavingSaving_perc": 10
+    },
+    "MeasurementUnits": {
+        "Area": {
+            "Base": "m²",
+            "cm²": 10000
+        },
+        "Concentration": {
+            "Base": "ppt",
+            "psu": 2
+        },
+        "Density": {
+            "Base": "kg/m³"
+        },
+        "DynamicViscosity": {
+            "Base": "Pa*sl"
+        },
+        "FlowRateVolume": {
+            "Base": "m³/s",
+            "Gpm": 15.25,
+            "Mld": 84.6,
+            "l/s": 1000,
+            "m³/h": 3600
+        },
+        "Frequency": {
+            "Base": "Hz"
+        },
+        "Length": {
+            "Base": "m",
+            "cm": 100,
+            "ft": 3.2808,
+            "km": 0.001,
+            "mm": 1000
+        },
+        "Mass": {
+            "Base": "kg"
+        },
+        "Power": {
+            "Base": "W"
+        },
+        "Pressure": {
+            "Base": "Pa"
+        },
+        "Signal": {
+            "Base": "dB"
+        },
+        "Temperature": {
+            "Base": "°C",
+            "F": 5
+        },
+        "Time": {
+            "Base": "s",
+            "m": 0.0166667,
+            "ms": 1000,
+            "ns": 1000000000,
+            "µs": 1000000
+        },
+        "Velocity": {
+            "Base": "m/s",
+            "cm/s": 100,
+            "feet/s": 1.2345,
+            "km/h": 25
+        },
+        "Viscosity": {
+            "Base": "m²/s"
+        },
+        "Voltage": {
+            "Base": "V",
+            "mV": 1000
+        },
+        "Volume": {
+            "Base": "m³",
+            "Ml": 1000,
+            "l": 1000
+        },
+        "Angle": {
+            "Base": "deg"
+        }
+    },
+    "MeasurementValues": {
+        "Angle": [
+            "Angle"
+        ],
+        "Area": [
+            "A"
+        ],
+        "Concentration": [
+            "C",
+            "Salinity"
+        ],
+        "Density": [
+            "rho"
+        ],
+        "DynamicViscosity": [
+            "niu"
+        ],
+        "FlowRateVolume": [
+            "Q"
+        ],
+        "Frequency": [
+            "F"
+        ],
+        "Length": [
+            "x",
+            "y",
+            "z",
+            "Depth",
+            "Diameter",
+            "H",
+            "ra",
+            "rh",
+            "Length",
+            "r",
+            "Pw",
+            "Width",
+            "HWater",
+            "HAir",
+            "Height",
+            "Radius",
+            "HUS"
+        ],
+        "Mass": [
+            "m"
+        ],
+        "Power": [
+            "P"
+        ],
+        "Pressure": [
+            "p"
+        ],
+        "Signal": [
+            "Signal"
+        ],
+        "Temperature": [
+            "T",
+            "TWater",
+            "TAir"
+        ],
+        "Time": [
+            "t",
+            "ttfwd",
+            "ttrev",
+            "dtt",
+            "meantt"
+        ],
+        "Unitless": [
+            "Efficiency",
+            "Re",
+            "S",
+            "k",
+            "STATUS",
+            "corr",
+            "corrfwd",
+            "corrrev",
+            "gainfwd",
+            "gainrev",
+            "pw1stfwd",
+            "pwr1strev",
+            "snrfwd",
+            "snrrev"
+        ],
+        "Velocity": [
+            "v",
+            "vCell",
+            "vx",
+            "vy",
+            "vz",
+            "vPath",
+            "vLayer",
+            "vm",
+            "TotalVolume",
+            "Volume",
+            "DVol"
+        ]
+    },
+    "Overview": {
+        "language": "german",
+        "location": "W.A.S.",
+        "serialno": "hvmt0487",
+        "type": "Q-Eye PSC",
+        "checkUserForms": 1,
+        "isKanalisDual": 0,
+        "AjaxTimeOut": 1000,
+        "LastModified": "2017-03-20 19:23:34",
+        "lastmod": "2016-12-23 10:01:01",
+        "LastWriting": "2017-03-16 14:31:52"
+    },
+    "PCP1": {
+        "Active": 1,
+        "AirLevel": 0,
+        "BottomOffset_m": 0,
+        "ExternalLevel": 0,
+        "FixLevel": 0,
+        "FixWaterLevel_m": 0.18,
+        "Hysteris_m": null,
+        "ID": 1412,
+        "RadarAnalog": 0,
+        "RadarAngle": 45,
+        "RadarPolynom": {
+            "c0": "",
+            "c1": "",
+            "c2": "",
+            "c3": "",
+            "c4": "",
+            "c5": "",
+            "c6": ""
+        },
+        "Roughness": 9,
+        "StartBlanking_m": 0.01,
+        "SwitchingLevel_m": null,
+        "TopBlanking_m": 0.01,
+        "UltrasonicLevel": 1,
+        "MeasurementHorizontal": 0,
+        "HysteresisPSC_m": 0,
+        "ThresholdPSC_m": 0,
+        "MinSignal": 0
+    },
+    "PCP2": {
+        "BottomOffset_m": 0,
+        "ID": null,
+        "RadarAnalog": 0,
+        "Roughness": null,
+        "StartBlanking_m": 0,
+        "TopBlanking_m": 0,
+        "MeasurementHorizontal": 0,
+        "HysteresisPSC_m": 0,
+        "ThresholdPSC_m": 0,
+        "MinSignal": 0
+    },
+    "PCP3": {
+        "BottomOffset_m": 0,
+        "ID": null,
+        "RadarAnalog": 0,
+        "Roughness": null,
+        "StartBlanking_m": 0,
+        "TopBlanking_m": 0,
+        "MeasurementHorizontal": 0,
+        "HysteresisPSC_m": 0,
+        "ThresholdPSC_m": 0,
+        "MinSignal": 0
+    },
+    "PCP4": {
+        "BottomOffset_m": null,
+        "ID": null,
+        "RadarAnalog": 0,
+        "Roughness": null,
+        "StartBlanking_m": null,
+        "TopBlanking_m": null
+    },
+    "PCP5": {
+        "BottomOffset_m": null,
+        "ID": null,
+        "RadarAnalog": 0,
+        "Roughness": null,
+        "StartBlanking_m": null,
+        "TopBlanking_m": null
+    },
+    "TCPSocket": {
+        "Host": "127.0.0.1",
+        "Port": "20000"
+    },
+    "UnitDisplay": {
+        "Area": "m²",
+        "Concentration": "ppt",
+        "Density": "kg/m³",
+        "DynamicViscosity": "Pa*sl",
+        "FlowRateVolume": "m³/h",
+        "Frequency": "Hz",
+        "Length": "m",
+        "Mass": "kg",
+        "Power": "W",
+        "Pressure": "Pa",
+        "Signal": "dB",
+        "Temperature": "°C",
+        "Time": "ns",
+        "Velocity": "m/s",
+        "Viscosity": "m²/s",
+        "Voltage": "mV",
+        "Volume": "m³"
+    },
+    "LMParams": {
+        "tGrad": 0,
+        "tDlyGrad": 0,
+        "gradBandDiff": 0,
+        "gradBandLeak": 0,
+        "dQWarn": 0,
+        "dQAlarm": 0,
+        "tDlyDQW": 0,
+        "tDlyDQA": 0,
+        "tLckgAvg": 0,
+        "lQAlarm": 0
+    }
+}
